@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-5 mx-auto">
+        <div class="p-2 shadow">
+            <form [formGroup]="form1">
+                <input type="text" formControlName="firstname" placeholder="Enter First Name" class="form-control my-2" [class.is-valid]="form1.get('firstname')?.valid && form1.get('firstname')?.touched " [class.is-invalid]="form1.get('firstname')?.invalid && form1.get('firstname')?.touched ">
+                <input type="text" formControlName="lastname" placeholder="Enter last Name" class="form-control my-2" [class.is-valid]="form1.get('lastname')?.valid && form1.get('lastname')?.touched " [class.is-invalid]="form1.get('lastname')?.invalid && form1.get('lastname')?.touched ">
+                <input type="text" formControlName="username" placeholder="Enter Username" class="form-control my-2" [class.is-valid]="form1.get('username')?.valid && form1.get('username')?.touched " [class.is-invalid]="form1.get('username')?.invalid && form1.get('username')?.touched ">
+                <input type="text" formControlName="age" placeholder="Enter Age " class="form-control my-2" [class.is-valid]="form1.get('age')?.valid && form1.get('age')?.touched " [class.is-invalid]="form1.get('age')?.invalid && form1.get('age')?.touched ">
+                <input type="password" formControlName="password" placeholder="password" class="form-control my-2" [class.is-valid]="form1.get('password')?.valid && form1.get('password')?.touched " [class.is-invalid]="form1.get('password')?.invalid && form1.get('password')?.touched ">
+                <input type="checkbox" (click)="checkbox()" > I want to certify that the information provided is correct and I am 18years old or above
+                <div>{{this.message}}</div>
+                <button class="btn btn-primary w-100" [disabled]="form1.invalid" (click)="signup()">Sign Up</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

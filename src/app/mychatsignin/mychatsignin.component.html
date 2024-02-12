@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="col-5 mx-auto shadow">
+        <h1>Login Page</h1>
+        <form #formone="ngForm">
+            <input type="text" class="form-control my-2" placeholder="Enter Username" [(ngModel)]="username" name="username" #usern="ngModel" [class.is-valid]="usern.valid && usern.dirty" [class.is-invalid]="usern.invalid && usern.touched"  required>
+            <input type="password" class="form-control my-2" placeholder="Enter Password" [(ngModel)]="password" name="password" #pass="ngModel" [class.is-valid]="pass.valid && pass.dirty" [class.is-invalid]="pass.invalid && pass.touched"  required>
+            <button class="btn btn-success w-100" (click)="signin()">Sign In</button>
+            <div>{{message}}</div>
+        </form>
+
+    </div>
+
+</div>

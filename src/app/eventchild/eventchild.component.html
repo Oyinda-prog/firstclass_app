@@ -1,0 +1,18 @@
+<div class="col-12 mx-auto shadow p-2">
+  <h1>This is the child's page</h1>
+  <p>This is msg from parent : {{send_to_child}}</p>
+
+  <input type="text" class="form-control my-2" [(ngModel)]="sndparent">
+  <button class="btn btn-success" (click)="send()">send msg</button>
+
+ <div class="text-center shadow">
+  <div class="mt-4" *ngFor="let msg of actualchats">
+    <div> Msg: {{msg.msg}}</div>
+    <div> Time sent: {{msg.time|date:'shortTime'}}</div>
+    <div>Sender: {{msg.name}}</div>
+    
+    <div>Username:{{msg.username}}</div>
+    </div>
+
+ </div>
+</div>

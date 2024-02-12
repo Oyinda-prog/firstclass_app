@@ -1,0 +1,50 @@
+
+<!-- <p>viewinstace works!</p>
+  st
+<div>
+    *ngIf="special;
+    else templateName"
+</div>
+*ngIf="element;else templateName"
+<input (input)="myVariable = $event.target.value">
+<input [value]="myVariable"> -->
+<div *ngFor="let item of array">
+<p>{{item.Firstname}}</p>
+</div>
+
+<div [ngStyle]="{'color': 'red','font-size':'30px'} " >
+  jkkl
+</div>
+<input [value]="myVariable"> 
+<div *ngIf="special; else templateName">
+    <!-- Content to display when 'special' is true -->
+    Content for special case
+  </div>
+  
+  <ng-template #templateName>
+  this is false
+  </ng-template>
+  
+  <button (click)="changes()">
+check button
+  </button>
+  <span *ngIf="special;else check">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur molestias quaerat ducimus quo, harum aperiam soluta sunt ut libero distinctio odio reiciendis odit quas ad! Laudantium, ratione? Odio, aut. Ea temporibus quos, molestias explicabo ab 
+  </span>
+  <ng-template #check>
+hjkl;;;;;;;;
+</ng-template>
+<div *ngIf="special;else id">
+lohjkk,mn 
+</div>
+
+<ng-template #id>
+    hhkkkkkkkkkkk
+</ng-template>
+<button (click)="checks()">Check</button>
+<div *ngIf="special;else templateName">
+hjjjkkkk
+</div>
+<ng-template #templateName>
+<div>localStorage.setItem('contacts',JSON.stringify(this.contactarray))</div>
+</ng-template>

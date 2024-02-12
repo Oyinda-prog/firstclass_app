@@ -1,0 +1,13 @@
+<p>viewallcontacts works!</p>
+ <div class="container">
+    <div class="col-6 mx-auto shadow p">
+        <div  *ngFor="let contact of contactarray, let i=index" class="py-2 my-2" style="cursor: pointer;;" (click)="goto(i)">
+  <div class="shadow text-center">
+<p>{{contact.firstname}}</p>
+<p>{{contact.lastname}}</p>
+  </div>
+        </div>
+
+    </div>
+
+ </div>

@@ -1,0 +1,56 @@
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="views">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;" routerLink="view_contacts" >View All Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Welcome {{userarray.firstname}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="col-6 mx-auto shadow">
+    <div class="row">
+        <h1>This is the parent page</h1>
+
+<input type="text" class="form-control my-2" placeholder="Send message to child" [(ngModel)]="send_to_child">
+<button class="btn btn-success w-25" (click)="sendmsg()">sendmsg</button>
+
+<div  class="row mt-2" *ngFor="let msg of receivearray">
+    <div class="shadow p-3">
+     <div class="text-center">
+        <div>Sender: {{msg.name}}</div>
+        <div> Time sent: {{msg.time|date:"shortTime"}}</div>
+        <div>Date sent: {{msg.time|date:"shortDate"}}</div>
+        <div>Message: {{msg.msg}}</div>
+     </div>
+    </div>
+  
+  <!-- <div>Sender: {{msg.name}}</div>
+  <div> Time sent: {{msg.time|date:"shortTime"}}</div>
+  <div>Date sent: {{msg.time|date:"shortDate"}}</div>
+  <div>Message: {{msg.msg}}</div> -->
+</div>
+    </div>
+    <div class="mt-5">
+        <app-eventchild [send_to_child]="msgarray" (eventemit)="receive($event)"></app-eventchild>
+    </div>
+
+</div>
+
+

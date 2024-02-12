@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+<div class="col-7 mx-auto shadow bg-light mt-2">
+     <div class="col-10 mx-auto p-2 shadow">
+    <input type="text" class="form-control my-2" [(ngModel)]="parentvalue">
+    <button (click)="sendmsg()">Send</button>
+     </div>
+     <div>{{this.receiver2}}</div>
+</div>
+    </div>
+    <div class="row">
+        <div class="col-6 mx-auto shadow bg-light">
+        <app-child [receiver]="receiver" (msgemmiter)="receivemsg($event)"></app-child>
+        </div>
+            </div>
+{{this.receiver2}}
+</div> 

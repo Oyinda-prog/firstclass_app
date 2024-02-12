@@ -1,0 +1,13 @@
+<div class="shadow col-10 mx-auto bg bg-light">
+<div *ngFor="let chatuser of mychatarray, let i=index" (click)="sendchatuser(chatuser,i)" style="cursor: pointer;">
+<div class="shadow p-5 my-2">
+    <div class="mb-5 text-center">
+        <img src="/assets/images/default_image.jpeg" alt="">
+    </div>
+    <div class="text-center">
+<h5>{{chatuser.firstname}}</h5>
+    </div>
+    <hr>
+</div>
+</div>
+</div>

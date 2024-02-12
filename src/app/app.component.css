@@ -1,0 +1,13 @@
+.styles1{
+    background-color: red;
+    font-size: 30px;
+    color: white;
+    width: 400px;
+    display: block;
+}
+.styles2{
+    background-color: yellow;
+    font-size: 60px;
+    color: white;
+    border-radius: 15px;
+}

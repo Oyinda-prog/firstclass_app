@@ -1,0 +1,20 @@
+<p>reactive-forms works!</p>
+<div class="col-6 mx-auto shadow">
+    <div class="p-2">
+<form [formGroup]="formone" (ngSubmit)="submit()">
+    <input type="text" class="form-control my-2" formControlName="firstname" placeholder="Firstname" [class.is-valid]="formone.get('firstname')?.valid && formone.get('firstname')?.dirty" [class.is-invalid]="formone.get('firstname')?.invalid && formone.get('firstname')?.dirty">
+    <div *ngIf="formone.get('firstname')?.invalid && formone.get('firstname')?.touched">
+        <span class="text-center text-danger" *ngIf="formone.get('firstname')?.errors?.['minlength']">The minimum length required is 12</span>
+
+    </div>
+    <input type="text" class="form-control my-2" formControlName="lastname" placeholder="Lastname">
+    <input type="email" class="form-control my-2" formControlName="email" placeholder="Email">
+    <input type="password" class="form-control my-2" formControlName="password">
+    <input type="checkbox"  formControlName="box">
+ <p> I certify that te information provided is correct</p>
+    <button class="btn btn-success w-100" [disabled]="formone.invalid || this.formone.value['box']==false">Submit</button>
+   
+</form>
+    </div>
+
+</div>

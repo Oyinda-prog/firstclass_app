@@ -1,0 +1,27 @@
+<p>displaycontact works!</p>
+<div>
+    <!-- {{user.fullname}} -->
+</div>
+<div>display contact works</div>
+<div>Hi, how you dey?</div>
+<div class="css1" >
+    {{'deejkk'|uppercase}}
+</div>
+<div [style]="color">
+    <p [ngStyle]="color">helloooooo</p>
+    <div [ngStyle]="{ 'color': isError ? 'red' : 'green', 'font-size': '16px' }">Hello, World!</div>
+    <div [ngStyle]="getStyle()">Hello, World!</div>
+    <div [style.color]="!isError ? 'red' : 'green'">Hello, World!</div>
+
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quos?
+</div>
+<div [class.css1]="!special">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi totam ab dolor qui, reiciendis veritatis amet officiis quis soluta culpa quibusdam officia porro recusandae cum perspiciatis, tempora incidunt exercitationem corrupti.
+</div>
+<div [class]="special?'css2':'css1'">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis et odit quos dolorem officiis qui atque at. Quo officia laudantium dicta sequi. Cumque sapiente labore voluptates ducimus aut, facilis vitae est veniam id exercitationem. Deleniti architecto tempora possimus quasi modi tenetur veniam cumque. Nulla corporis placeat at veritatis, dicta cupiditate?
+</div>
+
+<p>{{'HELLO'|lowercase}}</p>
+<button (click)="check()">Check</button>

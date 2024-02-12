@@ -1,0 +1,26 @@
+
+<div class="mx-auto col-10 shadow p-5" *ngIf="userobj.userid">
+    <div class="shadow p-4">
+        <div class="text-center">
+        <h1 class="display-6 text-success">The Details are for {{userobj.lastname}} {{userobj.firstname}}</h1>
+        <div class="mb-5">
+            <img src="/assets/images/default_image.jpeg" alt="img">
+        </div>
+<p>Firstname: <input type="text" value="{{userobj.firstname}}" [(ngModel)]="userobj.firstname" class="btn btn-success"></p>
+<p>Lastname: <input type="text" value="{{userobj.lastname}}" [(ngModel)]="userobj.lastname" class="btn btn-info"></p>
+<p>Age:   <input type="text" value="{{userobj.age}}" [(ngModel)]="userobj.age" class="btn btn-success"> </p>
+<p>Username: <input type="text" value="{{userobj.username}}" [(ngModel)]="userobj.username" class="btn btn-info"> </p>
+<p>Userid:  <input type="text" value="{{userobj.userid}}" [(ngModel)]="userobj.userid" class="btn btn-success" disabled></p>
+<div class="p-2">
+    <button class="btn btn-info me-5" (click)="del()">Delete</button> 
+    <button class="btn btn-success" (click)="edit()">Edit</button>
+   
+</div>
+<div class="text-center">
+    <div class="text-success">{{message}}</div>
+
+</div>
+    </div>
+    </div>
+
+</div>

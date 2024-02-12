@@ -1,0 +1,113 @@
+<!-- <p>landingpage works!</p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, dolor!
+<div>{{this.name}}</div>
+<div>{{name}}</div>
+<div>{{firstname}}</div> -->
+<nav class="nav">
+<a routerLink="/signup" class="nav-link">Update</a>
+<a routerLink="/form" class="nav-link">Template Driven Form|</a>
+<a routerLink="/testsignup" class="nav-link">Sign up page|</a>
+<a routerLink="/dashboard" class="nav-link">Dashboard</a>
+<a routerLink="/testsignin" class="nav-link">Signin Page|</a>
+<a routerLink="/testsignup" class="nav-link">Student Sign up|</a>
+<a routerLink="/reactiveform" class="nav-link">Reactive Forms|</a>
+<a routerLink="/mychat_dashboard" class="nav-link">Mychat_App Dashboard|</a>
+<a routerLink="/mychat_dashboard/view_contacts" class="nav-link">View Contacts|</a>
+<a routerLink="/behavior_subject" class="nav-link">Student Portal|</a>
+
+
+</nav>
+
+<div class="container mt-5">
+  <div class="col-10 mx-auto shadow">
+    <div class="row p-2">
+<div class="col-6">
+  <table class="table table-striped table-primary">
+    <thead>
+      <tr>
+      <th>S/N</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Status</th>
+      </tr>
+    </thead>
+      <tbody>
+      <tr *ngFor="let behavior of behaviorarray,let i=index"  (click)="sendbehavior(behavior)" style="cursor: pointer;">
+    <td>{{i}}</td>
+    <td>{{behavior.id}}</td>
+    <td>{{behavior.name}}</td>
+    <td>{{behavior.city}}</td>
+    <td>{{behavior.status}}</td>
+      </tr>
+    </tbody>
+    </table>
+</div> 
+<div class="col-4">
+
+<app-signup></app-signup> 
+</div>     
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 shadow">
+        <h1 class="display-6 text-danger my-3">Create Contact </h1>
+        <input type="text" placeholder="Full Name" class="form-control mb-2" [(ngModel)]="fullname">
+        <input type="text" placeholder="Email" class="form-control  mb-2" [(ngModel)]="email">
+        <input type="text" placeholder="Phone Number" class="form-control  mb-2" [(ngModel)]="phonenumber">
+        <input type="text" placeholder="Address" class="form-control  mb-2" [(ngModel)]="address">
+        <button class="btn btn-success w-100 mb-2" (click)="addcontact()">Add contact</button>
+        </div>
+        <div class="col-6 shadow">
+        <div class="row" *ngFor="let contact of contactarray, let i=index">
+            <div class="col-4 shadow my-2" >
+               <p>{{contact.fullname}}</p>  
+            </div>
+            <div class="col-4 shadow my-2" >
+               <button class="btn btn-danger" routerLink="dashboard/{{i}}">View</button>  
+               <button (click)="check(i)">Check</button>
+             </div>
+             <div class="col-4 shadow my-2" >
+                <button class="btn btn-danger" (click)="delety(i)">Delete</button> 
+                <!-- <a [routerLink]="['/update_details']" class="btn btn-success">Edit</a> -->
+                 <button (click)="edity(i)" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button> 
+             </div>
+
+        </div>
+        </div>
+    </div>
+    
+</div>
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" placeholder="Full Name" class="form-control mb-2" [(ngModel)]="fullnames">
+            <input type="text" placeholder="Email" class="form-control  mb-2" [(ngModel)]="emails">
+            <input type="text" placeholder="Phone Number" class="form-control  mb-2" [(ngModel)]="phonenumbers">
+            <input type="text" placeholder="Address" class="form-control  mb-2" [(ngModel)]="addresss">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="savechange()">Save Changes</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
