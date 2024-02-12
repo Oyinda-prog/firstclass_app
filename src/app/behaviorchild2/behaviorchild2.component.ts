@@ -55,7 +55,7 @@ let index=JSON.parse(localStorage['setindex'])
     firstname:this.userobj.firstname,
     lastname:this.userobj.lastname,
     age:this.userobj.age,
-    username:this.userobj.password,
+    username:this.userobj.username,
     userid:this.userobj.userid,
     password:this.userobj.password
   }
